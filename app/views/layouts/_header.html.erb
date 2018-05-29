@@ -2,5 +2,12 @@
 <ul class="foo">
   <li><%= link_to "ホーム","/" %></li>
   <li><%= link_to "ヘルプ","/help" %></li>
-  <li><%= link_to "新規作成","/signup" %></li>
+  <li><%= link_to "投稿された問題","#" %> </li>
+  <% if logged_in? %>
+    <li><%= link_to "問題の投稿","#" %> </li>
+    <li><%= link_to "ログアウト","/logout",method: :delete %></li>
+  <% else %>
+    <li><%= link_to "ログイン","/login" %></li>
+    <li><%= link_to "新規作成","/signup" %></li>
+  <% end %>
 </ul>
